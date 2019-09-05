@@ -10,6 +10,11 @@ if(NOT DEFINED CMAKE_BUILD_TYPE)
 	set(CMAKE_BUILD_TYPE Release CACHE STRING "Build type")
 endif()
 
+# Since this is going to be used exclusively
+# in Switchcord, we don't want to touch the
+# version variables.
+cmake_policy(SET CMP0048 OLD)
+
 project(wslay)
 
 option(WSLAY_CONFIGURE_INSTALL "Generate install target" ON)
